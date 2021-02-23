@@ -1,0 +1,254 @@
+
+{% load static %}
+{% static "images" as baseUrl %}
+<html lang="en">
+<head>
+	<title>Otak Shine|Contact</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Travello template project">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+	<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat",sans-serif;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+
+.business-card{
+  width: 500px;
+  height: 400px;
+}
+
+.middle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.front,.back{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s linear;
+}
+
+.front{
+  background: rgba(255,255,255,.7);
+  padding: 40px;
+  transform: perspective(600px) rotateX(180deg);
+}
+
+.front::before,.front::after{
+  content: "";
+  position: absolute;
+  right: 0;
+}
+
+.front::before{
+  background: #2c3e50;
+  width: 80px;
+  height: 120px;
+  bottom: 0;
+  clip-path:polygon(0 100%,40% 0,100% 100%);
+}
+
+.front::after{
+  background: #34495e;
+  width: 100px;
+  height: 100%;
+  top: 0;
+  clip-path:polygon(0 0,100% 0,100% 100%,80% 100%);
+}
+
+.front h2{
+  text-transform: uppercase;
+}
+
+.front span{
+  background: #34495e;
+  color: #fff;
+  padding: 4px 10px;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.front .contact-info li{
+  margin: 10px 0;
+  display: flex;
+   font-size: 20px;
+   text-shadow:1px 1px 1px #000;
+  align-items: center;
+}
+
+.front .contact-info li i{
+  width: 26px;
+  height: 26px;
+  background: #34495e;
+  color: #fff;
+font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 6px;
+}
+
+.back{
+  background: rgba(0,0,0,.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-size: 24px;
+  transform: perspective(600px) rotateX(0deg);
+}
+
+.business-card-active .front{
+  transform: perspective(600px) rotateX(0deg);
+}
+.business-card-active .back{
+  transform: perspective(600px) rotateX(-180deg);
+}
+
+</style>
+<body>
+<div class="super_container">
+
+		<!-- Header -->
+
+		<header class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="header_content d-flex flex-row align-items-center justify-content-start">
+							<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+								<div class="logo"><a href=""><img src = "{% static 'images/otak.png' %}" width="250px" height="75px"/></a></div>
+								<nav class="main_nav">
+									<ul class="d-flex flex-row align-items-start justify-content-start">
+										<li class="active"><a href="/">HOME</a></li>
+										<li><a href="about">ABOUT</a></li>
+										<li><a href="contact">CONTACT</a></li>
+										<li><a href="tour">TOUR</a></li>
+
+									</ul>
+								</nav>
+								<div class="header_phone ml-auto">Call us: 9345350595</div>
+
+								<!-- Hamburger -->
+
+								<div class="hamburger ml-auto">
+									<i class="fa fa-bars" aria-hidden="true"></i>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header_social d-flex flex-row align-items-center justify-content-start">
+				<ul class="d-flex flex-row align-items-start justify-content-start">
+					<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
+		</header>
+
+		<!-- Menu -->
+
+		<div class="menu">
+			<div class="menu_header d-flex flex-row align-items-center justify-content-start">
+				<div class="menu_logo"><a href=""><img src = "{% static 'images/otakorg.png' %}" width="50px" height="50px"/>Otak Shine</a></div>
+				<div class="menu_close_container ml-auto">
+					<div class="menu_close">
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+			</div>
+			<div class="menu_content">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="about">About us</a></li>
+					<li><a href="contact">Contact</a></li>
+					<li><a href="tour">Tour</a></li>
+				</ul>
+			</div>
+			<div class="menu_social">
+				<div class="menu_phone ml-auto">Call us: 04366-296257</div>
+				<ul class="d-flex flex-row align-items-start justify-content-start">
+					<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
+	</div>
+<div class="background_image"
+							style="background-image:url({% static 'images/home_slider.jpg' %})"></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="business-card middle">
+      <div class="front">
+        <h2>OTAK SHINE</h2>
+        <span>Carrier Development Platform</span>
+        <ul class="contact-info">
+          <li>
+            <i class="fas fa-mobile-alt"></i>&ensp;&ensp;+91 9345350595
+          </li>
+          <li>
+            <i class="far fa-envelope"></i>&ensp;&ensp;otakshine@gmail.com
+          </li>
+          <li>
+            <i class="fas fa-map-marker-alt"></i>&ensp;&ensp;2/3 Nijam Complex,<br>&ensp;&ensp;Ezhil Nagar,<br>&ensp;&ensp;Nannilam,<br>&ensp;&ensp;Thiruvarur(Dt)<br>&ensp;&ensp;610 105
+          </li>
+        </ul>
+      </div>
+      <div class="back">
+        <span>OTAK SHINE</span>
+      </div>
+    </div>
+ <script>
+      $(".business-card").click(function(){
+        $(".business-card").toggleClass("business-card-active");
+      });
+    </script>
+</div>
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}">
+						</script>
+						<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+						<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+						<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+						<script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+						<script src="{% static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
+						<script src="{% static 'plugins/easing/easing.js' %}"></script>
+						<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+						<script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>
